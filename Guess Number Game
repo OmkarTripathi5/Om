@@ -1,0 +1,51 @@
+print("\t \t \t Welcome! In The Game(The Guess Game)\t \t \t")
+print("Tips :- In this game you guess the number and if your guess is right then you win the match and if your\n "
+      "guess is wrong then you lose the match and in this game you get only 4 chance. ")
+
+def game():
+    num = 88
+    exit_game = False
+    for j in range(1, 5):
+        i = 4
+        while(i>=1):
+
+            guess = int(input("Enter you guess number\n"))
+            if guess > num:
+                print("Your guess is greater")
+                print(f"Only{i - 1} chance is left")
+                j = j+1
+
+
+            elif guess < num:
+                print("Your guess is smaller")
+                print(f"Only{i - 1} chance is left")
+                j = j+1
+
+            elif guess == num:
+                print(f"Congratulation ! You Win The Match in {j} chance")
+                exit_game = True
+                break
+            else:
+                 continue
+
+
+            i = i - 1
+
+        if exit_game == True:
+            break
+        else:
+            print("You Loose The Match Try Next Time")
+            break
+
+
+
+game()
+while(True):
+    print("\t \tyou want to play again then type y for Yes and n for No" )
+    c = input()
+    if c  == "y":
+        game()
+        break
+    else:
+        print("\t \t \t Thank You! For Playing.")
+        break
